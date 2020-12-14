@@ -1330,7 +1330,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 81b492a370cbfdf4196afa4f20e78974,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.35224903
+      value: 0.362
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81b492a370cbfdf4196afa4f20e78974,
         type: 3}
@@ -1377,13 +1377,79 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 81b492a370cbfdf4196afa4f20e78974,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2845204
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 81b492a370cbfdf4196afa4f20e78974,
         type: 3}
       propertyPath: m_Name
-      value: Charge
+      value: Personaje
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 81b492a370cbfdf4196afa4f20e78974,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 82a0c3753f8a77b4ebd20a77c676cdea, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81b492a370cbfdf4196afa4f20e78974, type: 3}
+--- !u!1 &710044936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 81b492a370cbfdf4196afa4f20e78974,
+    type: 3}
+  m_PrefabInstance: {fileID: 710044935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &710044938
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710044936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.23463249
+  m_Height: 1.4155347
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.6813972, z: -0.010465622}
+--- !u!54 &710044939
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710044936}
+  serializedVersion: 2
+  m_Mass: 5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &710044940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710044936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612be0a40adcbd447b6290cabf78c873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadMovimiento: 5
+  velocidadRotacion: 200
+  anim: {fileID: 0}
+  x: 0
+  y: 0
+  rb: {fileID: 0}
+  fuerzaDeSalto: 0
+  puedoSaltar: 0
 --- !u!1 &729549591
 GameObject:
   m_ObjectHideFlags: 0
