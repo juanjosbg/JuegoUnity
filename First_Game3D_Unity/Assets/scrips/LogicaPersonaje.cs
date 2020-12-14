@@ -7,9 +7,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LogicaPersonaje : MonoBehaviour 
-{ 
-    public float velocidadMovimiento = 5.0f;
-    public float velocidadRotacion = 200.0f;
+{
+    public float velocidadMovimiento;
+    public float velocidadRotacion;
     public Animator anim;
     public float x, y;
     public Rigidbody rb;
@@ -18,10 +18,14 @@ public class LogicaPersonaje : MonoBehaviour
 
     public void Start()
     {
+        fuerzaDeSalto = 6f;
+        velocidadMovimiento = 5f;
+        velocidadRotacion = 200.0f;
+        puedoSaltar = false;
         anim = GetComponent<Animator>();
     }
 
-    void Update()
+    public void FixedUpdate()
     {
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
@@ -31,5 +35,26 @@ public class LogicaPersonaje : MonoBehaviour
 
         anim.SetFloat("VelX", x);
         anim.SetFloat("VelY", y);
+
+        if (puedoSaltar)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                anim.SetBool("Salte", true);
+                rb.AddForce(new Vector3(0, fuerzaDeSalto, 0), ForceMode.Impulse);
+            }
+            anim.SetBool("tocoSuelo", true);
+        }
+        else
+        {
+            EstoyCayendo();
+        }
     }
+
+    public void EstoyCayendo()
+    {
+        anim.SetBool("TocoSuelo", false);
+        anim.SetBool("Salte", false);
+    }
+
 }
